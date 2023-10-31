@@ -44,7 +44,13 @@ export interface IconTheme {
       /**
        * The format of the font.
        */
-      format: "embedded-opentype" | "opentype" | "svg" | "truetype" | "woff" | "woff2";
+      format:
+        | "embedded-opentype"
+        | "opentype"
+        | "svg"
+        | "truetype"
+        | "woff"
+        | "woff2";
       /**
        * The font path, relative to the current file icon theme file.
        */
@@ -71,28 +77,30 @@ export interface IconTheme {
     /**
      * An icon definition. The object key is the ID of the definition.
      */
-    [k: string]: {
-      /**
-       * When using a SVG or PNG: The path to the image. The path is relative to the icon set file.
-       */
-      iconPath?: string;
-      /**
-       * When using a glyph font: The character in the font to use.
-       */
-      fontCharacter?: string;
-      /**
-       * When using a glyph font: The color to use.
-       */
-      fontColor?: string;
-      /**
-       * When using a font: The font size in percentage to the text font. If not set, defaults to the size in the font definition.
-       */
-      fontSize?: string;
-      /**
-       * When using a font: The id of the font. If not set, defaults to the first font definition.
-       */
-      fontId?: string;
-    };
+    [k: string]:
+      | {
+          /**
+           * When using a SVG or PNG: The path to the image. The path is relative to the icon set file.
+           */
+          iconPath?: string;
+          /**
+           * When using a glyph font: The character in the font to use.
+           */
+          fontCharacter?: string;
+          /**
+           * When using a glyph font: The color to use.
+           */
+          fontColor?: string;
+          /**
+           * When using a font: The font size in percentage to the text font. If not set, defaults to the size in the font definition.
+           */
+          fontSize?: string;
+          /**
+           * When using a font: The id of the font. If not set, defaults to the first font definition.
+           */
+          fontId?: string;
+        }
+      | undefined;
   };
   languageIds?: LanguageIds;
   light?: Associations1;
@@ -108,7 +116,7 @@ export interface FileExtensions {
   /**
    * The ID of the icon definition for the association.
    */
-  [k: string]: string;
+  [k: string]: string | undefined;
 }
 /**
  * Associates file names to icons. The object key is the full file name, but not including any path segments. File name can include dots and a possible file extension. No patterns or wildcards are allowed. File name matching is case insensitive.
@@ -117,7 +125,7 @@ export interface FileNames {
   /**
    * The ID of the icon definition for the association.
    */
-  [k: string]: string;
+  [k: string]: string | undefined;
 }
 /**
  * Associates folder names to icons. The object key is the folder name, not including any path segments. No patterns or wildcards are allowed. Folder name matching is case insensitive.
@@ -126,7 +134,7 @@ export interface FolderNames {
   /**
    * The ID of the icon definition for the association.
    */
-  [k: string]: string;
+  [k: string]: string | undefined;
 }
 /**
  * Associates folder names to icons for expanded folders. The object key is the folder name, not including any path segments. No patterns or wildcards are allowed. Folder name matching is case insensitive.
@@ -135,7 +143,7 @@ export interface FolderNamesExpanded {
   /**
    * The ID of the icon definition for the association.
    */
-  [k: string]: string;
+  [k: string]: string | undefined;
 }
 /**
  * Optional associations for file icons in high contrast color themes.
@@ -157,7 +165,7 @@ export interface LanguageIds {
   /**
    * The ID of the icon definition for the association.
    */
-  [k: string]: string;
+  [k: string]: string | undefined;
 }
 /**
  * Optional associations for file icons in light color themes.

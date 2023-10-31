@@ -10,7 +10,7 @@
 export type VscodeSchemasTasks =
   | (TaskRunnerConfiguration1 & {
       _runner?: {
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
       };
       linux?: TaskRunnerConfiguration11;
       osx?: TaskRunnerConfiguration12;
@@ -339,7 +339,10 @@ export interface TaskRunnerConfiguration1 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -553,9 +556,9 @@ export interface Options1 {
    * The environment of the executed program or shell. If omitted the parent process' environment is used.
    */
   env?: {
-    [k: string]: string;
+    [k: string]: string | undefined;
   };
-  [k: string]: string | unknown[] | {};
+  [k: string]: (string | unknown[] | {}) | undefined;
 }
 export interface TaskDescription1 {
   /**
@@ -602,7 +605,10 @@ export interface TaskDescription1 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -872,7 +878,10 @@ export interface TaskDescription1 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -1067,7 +1076,10 @@ export interface TaskDescription1 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -1337,7 +1349,10 @@ export interface TaskDescription1 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -1798,7 +1813,10 @@ export interface TaskDescription1 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -2007,7 +2025,10 @@ export interface TaskDescription1 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -2277,7 +2298,10 @@ export interface TaskDescription1 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -2822,7 +2846,10 @@ export interface TaskRunnerConfiguration11 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -3332,7 +3359,10 @@ export interface TaskRunnerConfiguration12 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -3842,7 +3872,10 @@ export interface TaskRunnerConfiguration13 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -4492,7 +4525,10 @@ export interface TaskRunnerConfiguration2 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -4705,7 +4741,7 @@ export interface TaskRunnerConfiguration2 {
                    * The task identifier.
                    */
                   type?: string;
-                  [k: string]: unknown;
+                  [k: string]: unknown | undefined;
                 }
               | string
             )[]
@@ -4714,7 +4750,7 @@ export interface TaskRunnerConfiguration2 {
                * The task identifier.
                */
               type?: string;
-              [k: string]: unknown;
+              [k: string]: unknown | undefined;
             }
           | string;
         /**
@@ -5342,7 +5378,7 @@ export interface TaskRunnerConfiguration2 {
            * The environment of the executed program or shell. If omitted the parent process' environment is used.
            */
           env?: {
-            [k: string]: string;
+            [k: string]: string | undefined;
           };
           /**
            * Configures the shell to be used.
@@ -5357,7 +5393,7 @@ export interface TaskRunnerConfiguration2 {
              */
             executable?: string;
           };
-          [k: string]: string | unknown[] | {};
+          [k: string]: (string | unknown[] | {}) | undefined;
         };
         /**
          * Configures the panel that is used to present the task's output and reads its input.
@@ -5409,7 +5445,10 @@ export interface TaskRunnerConfiguration2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -5693,7 +5732,10 @@ export interface TaskRunnerConfiguration2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -5920,7 +5962,7 @@ export interface TaskRunnerConfiguration2 {
                    * The task identifier.
                    */
                   type?: string;
-                  [k: string]: unknown;
+                  [k: string]: unknown | undefined;
                 }
               | string
             )[]
@@ -5929,7 +5971,7 @@ export interface TaskRunnerConfiguration2 {
                * The task identifier.
                */
               type?: string;
-              [k: string]: unknown;
+              [k: string]: unknown | undefined;
             }
           | string;
         /**
@@ -6553,7 +6595,7 @@ export interface TaskRunnerConfiguration2 {
            * The environment of the executed program or shell. If omitted the parent process' environment is used.
            */
           env?: {
-            [k: string]: string;
+            [k: string]: string | undefined;
           };
           /**
            * Configures the shell to be used.
@@ -6568,7 +6610,7 @@ export interface TaskRunnerConfiguration2 {
              */
             executable?: string;
           };
-          [k: string]: string | unknown[] | {};
+          [k: string]: (string | unknown[] | {}) | undefined;
         };
         /**
          * Configures the panel that is used to present the task's output and reads its input.
@@ -6620,7 +6662,10 @@ export interface TaskRunnerConfiguration2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -6904,7 +6949,10 @@ export interface TaskRunnerConfiguration2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -7122,7 +7170,7 @@ export interface TaskRunnerConfiguration2 {
                    * The task identifier.
                    */
                   type?: string;
-                  [k: string]: unknown;
+                  [k: string]: unknown | undefined;
                 }
               | string
             )[]
@@ -7131,7 +7179,7 @@ export interface TaskRunnerConfiguration2 {
                * The task identifier.
                */
               type?: string;
-              [k: string]: unknown;
+              [k: string]: unknown | undefined;
             }
           | string;
         /**
@@ -7759,7 +7807,7 @@ export interface TaskRunnerConfiguration2 {
            * The environment of the executed program or shell. If omitted the parent process' environment is used.
            */
           env?: {
-            [k: string]: string;
+            [k: string]: string | undefined;
           };
           /**
            * Configures the shell to be used.
@@ -7774,7 +7822,7 @@ export interface TaskRunnerConfiguration2 {
              */
             executable?: string;
           };
-          [k: string]: string | unknown[] | {};
+          [k: string]: (string | unknown[] | {}) | undefined;
         };
         /**
          * Configures the panel that is used to present the task's output and reads its input.
@@ -7826,7 +7874,10 @@ export interface TaskRunnerConfiguration2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -8110,7 +8161,10 @@ export interface TaskRunnerConfiguration2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -8336,7 +8390,7 @@ export interface TaskRunnerConfiguration2 {
                    * The task identifier.
                    */
                   type?: string;
-                  [k: string]: unknown;
+                  [k: string]: unknown | undefined;
                 }
               | string
             )[]
@@ -8345,7 +8399,7 @@ export interface TaskRunnerConfiguration2 {
                * The task identifier.
                */
               type?: string;
-              [k: string]: unknown;
+              [k: string]: unknown | undefined;
             }
           | string;
         /**
@@ -8973,7 +9027,7 @@ export interface TaskRunnerConfiguration2 {
            * The environment of the executed program or shell. If omitted the parent process' environment is used.
            */
           env?: {
-            [k: string]: string;
+            [k: string]: string | undefined;
           };
           /**
            * Configures the shell to be used.
@@ -8988,7 +9042,7 @@ export interface TaskRunnerConfiguration2 {
              */
             executable?: string;
           };
-          [k: string]: string | unknown[] | {};
+          [k: string]: (string | unknown[] | {}) | undefined;
         };
         /**
          * Configures the panel that is used to present the task's output and reads its input.
@@ -9040,7 +9094,10 @@ export interface TaskRunnerConfiguration2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -9324,7 +9381,10 @@ export interface TaskRunnerConfiguration2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -9550,7 +9610,7 @@ export interface TaskRunnerConfiguration2 {
                    * The task identifier.
                    */
                   type?: string;
-                  [k: string]: unknown;
+                  [k: string]: unknown | undefined;
                 }
               | string
             )[]
@@ -9559,7 +9619,7 @@ export interface TaskRunnerConfiguration2 {
                * The task identifier.
                */
               type?: string;
-              [k: string]: unknown;
+              [k: string]: unknown | undefined;
             }
           | string;
         /**
@@ -10184,7 +10244,7 @@ export interface TaskRunnerConfiguration2 {
            * The environment of the executed program or shell. If omitted the parent process' environment is used.
            */
           env?: {
-            [k: string]: string;
+            [k: string]: string | undefined;
           };
           /**
            * Configures the shell to be used.
@@ -10199,7 +10259,7 @@ export interface TaskRunnerConfiguration2 {
              */
             executable?: string;
           };
-          [k: string]: string | unknown[] | {};
+          [k: string]: (string | unknown[] | {}) | undefined;
         };
         /**
          * Configures the panel that is used to present the task's output and reads its input.
@@ -10251,7 +10311,10 @@ export interface TaskRunnerConfiguration2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -10535,7 +10598,10 @@ export interface TaskRunnerConfiguration2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -10761,7 +10827,7 @@ export interface TaskRunnerConfiguration2 {
                    * The task identifier.
                    */
                   type?: string;
-                  [k: string]: unknown;
+                  [k: string]: unknown | undefined;
                 }
               | string
             )[]
@@ -10770,7 +10836,7 @@ export interface TaskRunnerConfiguration2 {
                * The task identifier.
                */
               type?: string;
-              [k: string]: unknown;
+              [k: string]: unknown | undefined;
             }
           | string;
         /**
@@ -11394,7 +11460,7 @@ export interface TaskRunnerConfiguration2 {
            * The environment of the executed program or shell. If omitted the parent process' environment is used.
            */
           env?: {
-            [k: string]: string;
+            [k: string]: string | undefined;
           };
           /**
            * Configures the shell to be used.
@@ -11409,7 +11475,7 @@ export interface TaskRunnerConfiguration2 {
              */
             executable?: string;
           };
-          [k: string]: string | unknown[] | {};
+          [k: string]: (string | unknown[] | {}) | undefined;
         };
         /**
          * The path to the folder of the package.json file that provides the script. Can be omitted.
@@ -11465,7 +11531,10 @@ export interface TaskRunnerConfiguration2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -11749,7 +11818,10 @@ export interface TaskRunnerConfiguration2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -12006,7 +12078,7 @@ export interface TaskRunnerConfiguration2 {
                    * The task identifier.
                    */
                   type?: string;
-                  [k: string]: unknown;
+                  [k: string]: unknown | undefined;
                 }
               | string
             )[]
@@ -12015,7 +12087,7 @@ export interface TaskRunnerConfiguration2 {
                * The task identifier.
                */
               type?: string;
-              [k: string]: unknown;
+              [k: string]: unknown | undefined;
             }
           | string;
         /**
@@ -12656,7 +12728,10 @@ export interface TaskRunnerConfiguration2 {
                         /**
                          * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                          */
-                        applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                        applyTo?:
+                          | "allDocuments"
+                          | "closedDocuments"
+                          | "openDocuments";
                         /**
                          * Patterns to track the begin and end of a matcher active on a background task.
                          */
@@ -12893,7 +12968,10 @@ export interface TaskRunnerConfiguration2 {
                     /**
                      * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                      */
-                    applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                    applyTo?:
+                      | "allDocuments"
+                      | "closedDocuments"
+                      | "openDocuments";
                     /**
                      * Patterns to track the begin and end of a matcher active on a background task.
                      */
@@ -12940,7 +13018,10 @@ export interface TaskRunnerConfiguration2 {
                     /**
                      * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                      */
-                    fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+                    fileLocation?:
+                      | [unknown]
+                      | [unknown, unknown]
+                      | ("absolute" | "autoDetect" | "relative" | "search");
                     /**
                      * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                      */
@@ -13135,7 +13216,10 @@ export interface TaskRunnerConfiguration2 {
                         /**
                          * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                          */
-                        applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                        applyTo?:
+                          | "allDocuments"
+                          | "closedDocuments"
+                          | "openDocuments";
                         /**
                          * Patterns to track the begin and end of a matcher active on a background task.
                          */
@@ -13372,7 +13456,10 @@ export interface TaskRunnerConfiguration2 {
                     /**
                      * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                      */
-                    applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                    applyTo?:
+                      | "allDocuments"
+                      | "closedDocuments"
+                      | "openDocuments";
                     /**
                      * Patterns to track the begin and end of a matcher active on a background task.
                      */
@@ -13419,7 +13506,10 @@ export interface TaskRunnerConfiguration2 {
                     /**
                      * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                      */
-                    fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+                    fileLocation?:
+                      | [unknown]
+                      | [unknown, unknown]
+                      | ("absolute" | "autoDetect" | "relative" | "search");
                     /**
                      * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                      */
@@ -13651,7 +13741,10 @@ export interface TaskRunnerConfiguration2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -13935,7 +14028,10 @@ export interface TaskRunnerConfiguration2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -14206,7 +14302,10 @@ export interface TaskRunnerConfiguration2 {
                         /**
                          * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                          */
-                        applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                        applyTo?:
+                          | "allDocuments"
+                          | "closedDocuments"
+                          | "openDocuments";
                         /**
                          * Patterns to track the begin and end of a matcher active on a background task.
                          */
@@ -14443,7 +14542,10 @@ export interface TaskRunnerConfiguration2 {
                     /**
                      * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                      */
-                    applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                    applyTo?:
+                      | "allDocuments"
+                      | "closedDocuments"
+                      | "openDocuments";
                     /**
                      * Patterns to track the begin and end of a matcher active on a background task.
                      */
@@ -14490,7 +14592,10 @@ export interface TaskRunnerConfiguration2 {
                     /**
                      * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                      */
-                    fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+                    fileLocation?:
+                      | [unknown]
+                      | [unknown, unknown]
+                      | ("absolute" | "autoDetect" | "relative" | "search");
                     /**
                      * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                      */
@@ -14712,10 +14817,10 @@ export interface Options2 {
    * The environment of the executed program or shell. If omitted the parent process' environment is used.
    */
   env?: {
-    [k: string]: string;
+    [k: string]: string | undefined;
   };
   shell?: ShellConfiguration21;
-  [k: string]: string | unknown[] | {};
+  [k: string]: (string | unknown[] | {}) | undefined;
 }
 /**
  * Configures the shell to be used.
@@ -14772,7 +14877,7 @@ export interface TaskDescription2 {
              * The task identifier.
              */
             type?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
           }
         | string
       )[]
@@ -14781,7 +14886,7 @@ export interface TaskDescription2 {
          * The task identifier.
          */
         type?: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
       }
     | string;
   /**
@@ -15422,7 +15527,10 @@ export interface TaskDescription2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -15706,7 +15814,10 @@ export interface TaskDescription2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -15901,7 +16012,10 @@ export interface TaskDescription2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -16185,7 +16299,10 @@ export interface TaskDescription2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -16701,7 +16818,10 @@ export interface TaskDescription2 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -16972,7 +17092,10 @@ export interface TaskDescription2 {
                   /**
                    * Controls if a problem reported on a text document is applied only to open, closed or all documents.
                    */
-                  applyTo?: "allDocuments" | "closedDocuments" | "openDocuments";
+                  applyTo?:
+                    | "allDocuments"
+                    | "closedDocuments"
+                    | "openDocuments";
                   /**
                    * Patterns to track the begin and end of a matcher active on a background task.
                    */
@@ -17256,7 +17379,10 @@ export interface TaskDescription2 {
               /**
                * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
                */
-              fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+              fileLocation?:
+                | [unknown]
+                | [unknown, unknown]
+                | ("absolute" | "autoDetect" | "relative" | "search");
               /**
                * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
                */
@@ -17478,10 +17604,10 @@ export interface Options21 {
    * The environment of the executed program or shell. If omitted the parent process' environment is used.
    */
   env?: {
-    [k: string]: string;
+    [k: string]: string | undefined;
   };
   shell?: ShellConfiguration21;
-  [k: string]: string | unknown[] | {};
+  [k: string]: (string | unknown[] | {}) | undefined;
 }
 /**
  * Additional command options
@@ -17495,10 +17621,10 @@ export interface Options22 {
    * The environment of the executed program or shell. If omitted the parent process' environment is used.
    */
   env?: {
-    [k: string]: string;
+    [k: string]: string | undefined;
   };
   shell?: ShellConfiguration21;
-  [k: string]: string | unknown[] | {};
+  [k: string]: (string | unknown[] | {}) | undefined;
 }
 /**
  * Mac specific command configuration
@@ -17593,10 +17719,10 @@ export interface Options23 {
    * The environment of the executed program or shell. If omitted the parent process' environment is used.
    */
   env?: {
-    [k: string]: string;
+    [k: string]: string | undefined;
   };
   shell?: ShellConfiguration21;
-  [k: string]: string | unknown[] | {};
+  [k: string]: (string | unknown[] | {}) | undefined;
 }
 /**
  * Mac specific command configuration
@@ -18103,7 +18229,10 @@ export interface OsSpecificTaskRunnerConfiguration2 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -18317,10 +18446,10 @@ export interface Options24 {
    * The environment of the executed program or shell. If omitted the parent process' environment is used.
    */
   env?: {
-    [k: string]: string;
+    [k: string]: string | undefined;
   };
   shell?: ShellConfiguration21;
-  [k: string]: string | unknown[] | {};
+  [k: string]: (string | unknown[] | {}) | undefined;
 }
 /**
  * Mac specific command configuration
@@ -18773,7 +18902,10 @@ export interface OsSpecificTaskRunnerConfiguration21 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */
@@ -19426,7 +19558,10 @@ export interface OsSpecificTaskRunnerConfiguration22 {
         /**
          * Defines how file names reported in a problem pattern should be interpreted. A relative fileLocation may be an array, where the second element of the array is the path of the relative file location. The search fileLocation mode, performs a deep (and, possibly, heavy) file system search within the directories specified by the include/exclude properties of the second element (or the current workspace directory if not specified).
          */
-        fileLocation?: [unknown] | [unknown, unknown] | ("absolute" | "autoDetect" | "relative" | "search");
+        fileLocation?:
+          | [unknown]
+          | [unknown, unknown]
+          | ("absolute" | "autoDetect" | "relative" | "search");
         /**
          * The owner of the problem inside Code. Can be omitted if base is specified. Defaults to 'external' if omitted and base is not specified.
          */

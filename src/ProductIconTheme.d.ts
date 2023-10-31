@@ -17,7 +17,13 @@ export interface ProductIconTheme {
       /**
        * The format of the font.
        */
-      format: "embedded-opentype" | "opentype" | "svg" | "truetype" | "woff" | "woff2";
+      format:
+        | "embedded-opentype"
+        | "opentype"
+        | "svg"
+        | "truetype"
+        | "woff"
+        | "woff2";
       /**
        * The font path, relative to the current product icon theme file.
        */

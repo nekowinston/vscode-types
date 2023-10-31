@@ -5,6 +5,12 @@ export type { VscodeSchemasGlobalSnippets } from "./GlobalSnippets";
 export type { IconTheme } from "./IconTheme";
 export type { Icons } from "./Icons";
 export type { IgnoredSettings } from "./IgnoredSettings";
+export type {
+  CommandsSchemas,
+  CommandNames,
+  CommandType,
+  KeybindingsConfiguration,
+} from "./Keybindings";
 export type { LanguageConfiguration } from "./LanguageConfiguration";
 export type { ProductIconTheme } from "./ProductIconTheme";
 export type { VscodeSchemasSnippets } from "./Snippets";

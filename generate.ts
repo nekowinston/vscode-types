@@ -1,16 +1,14 @@
 #!/usr/bin/env tsx
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-
-import { compile, JSONSchema } from "json-schema-to-typescript";
+import { compile } from "json-schema-to-typescript";
 import { pascalCase, splitByCase } from "scule";
+import prettier from "prettier";
 
 const schemaRoot = path.join(
   __dirname,
   "vendor/extract-vscode-schemas/resources/vscode/schemas"
 );
-
-const toPascal = (str: string) => pascalCase(splitByCase(str, ["-"]));
 
 const bannerComment = `/* eslint-disable */
 /**
@@ -27,7 +25,7 @@ const mappings = [
   "icon-theme",
   "icons",
   "ignoredSettings",
-  // "keybindings",
+  "keybindings",
   "language-configuration",
   // "launch",
   "product-icon-theme",
@@ -53,6 +51,9 @@ mappings.forEach(async (mapping) => {
       compile(data, name, {
         additionalProperties: false,
         bannerComment,
+        format: false,
+        maxItems: 1024,
+        strictIndexSignatures: true,
         $refOptions: {
           resolve: {
             vscode: {
@@ -67,15 +68,10 @@ mappings.forEach(async (mapping) => {
           },
         },
       }).then(async (typeDefs) => {
-        await fs.writeFile(outFile, typeDefs, "utf-8");
+        const formatted = await prettier.format(typeDefs, {
+          parser: "typescript",
+        });
+        await fs.writeFile(outFile, formatted, "utf-8");
       })
     );
 });
-
-// const tpl = mappings
-//   .map((mapping) => {
-//     const name = toPascal(mapping);
-//     return `export type { ${name} } from "./${name}";`;
-//   })
-//   .join("\n");
-// fs.writeFile(path.join(__dirname, "src/index.d.ts"), tpl, "utf-8");
