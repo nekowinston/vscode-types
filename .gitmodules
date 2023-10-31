@@ -1,0 +1,3 @@
+[submodule "vendor/extract-vscode-schemas"]
+	path = vendor/extract-vscode-schemas
+	url = https://github.com/ota-meshi/extract-vscode-schemas
