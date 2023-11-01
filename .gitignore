@@ -14,3 +14,6 @@
 .pnp.*
 node_modules
 *.tgz
+eslint_report.json
+.vscode-test/
+schemas/
